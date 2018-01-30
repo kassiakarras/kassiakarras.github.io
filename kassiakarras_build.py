@@ -21,8 +21,9 @@ def create_index(product_list):
     add_to_html = ""
 
     for i in range(0, len(product_list)):
+
         add_to_html += "<div class=\"index_product\">"
-        add_to_html += "<a class=\"post_link\" href=\"" + "/" + product_list[i].image + "\">" + \
+        add_to_html += "<a class=\"post_link\" href=\"" + "/" + product_list[i].link + "\">" + \
                        product_list[i].name + "</a>"
         add_to_html += "<img src=\"" + product_list[i].image + "\">"
         add_to_html += "<p>" + product_list[i].type + ". " + str(product_list[i].price) + "</p>"
@@ -50,6 +51,7 @@ def process_product_json():
                 data[i]['type'],
                 data[i]['price'],
                 data[i]['image'],
+                ""
             ))
     return products
 
@@ -60,21 +62,21 @@ def create_product_pages(product_list):
 
         path = PRODUCT_DIR + "/" + product_list[i].name + ".html"
 
+        product_list[i].set_link(path)
+
         if os.path.exists(path):
             os.remove(path)
 
         with open("templates/product.html", "r") as template_file:
             template_text = template_file.read()
 
-
         add_to_html = ""
-
         add_to_html += "<div>"
         add_to_html += "<p>Product name: " + product_list[i].name + "</p>"
         add_to_html += "<img src=\"" + product_list[i].image + "\">"
         add_to_html += "<p>Price: " + str(product_list[i].price) + "</p>"
 
-        template_text = template_text.replace("{PRODUCT}", add_to_html)
+        template_text = template_text.replace("{PRODUCTS}", add_to_html)
 
         with open(path, "w") as new_file:
             new_file.write(template_text)
@@ -88,19 +90,23 @@ def reset_product_dir():
 
 class Product:
 
-    def __init__(self, name, type, price, image):
+    def __init__(self, name, type, price, image, link):
         self.name = name
         self.type = type
         self.price = price
         self.image = image
+        self.link = link
+
+    def set_link(self, link):
+        self.link = link
 
 
 reset_product_dir()
 
 process_product_json()
 
-create_index(products)
-
 create_product_pages(products)
+
+create_index(products)
 
 print("--- %s seconds ---" % (time.time() - start_time))
