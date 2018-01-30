@@ -2,6 +2,9 @@ import os
 import codecs
 import json
 import shutil
+import time
+
+start_time = time.time()
 
 
 DIRECTORY_NAME = os.path.basename(os.path.dirname(os.path.realpath(__file__)))  # Name of current directory
@@ -18,7 +21,7 @@ def create_index(product_list):
     add_to_html = ""
 
     for i in range(0, len(product_list)):
-        add_to_html += "<div>"
+        add_to_html += "<div class=\"index_product\">"
         add_to_html += "<a class=\"post_link\" href=\"" + "/" + product_list[i].image + "\">" + \
                        product_list[i].name + "</a>"
         add_to_html += "<img src=\"" + product_list[i].image + "\">"
@@ -34,11 +37,6 @@ def create_index(product_list):
 
     with open("index.html", "w") as new_file:
         new_file.write(f)
-
-
-def create_product_page():
-    with open("templates/product.html", "r") as html_file:
-        print(html_file.read())
 
 
 def process_product_json():
@@ -57,8 +55,6 @@ def process_product_json():
 
 
 def create_product_pages(product_list):
-
-    print(PRODUCT_DIR)
 
     for i in range(0, len(product_list)):
 
@@ -106,3 +102,5 @@ process_product_json()
 create_index(products)
 
 create_product_pages(products)
+
+print("--- %s seconds ---" % (time.time() - start_time))

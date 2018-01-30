@@ -1,5 +1,5 @@
 [{
-    "name": "hat",
+    "name": "hatss",
     "type": "hat",
     "price": 19.99,
     "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
@@ -9,5 +9,5 @@
     "name": "pants",
     "type": "pants",
     "price": 39.99,
-    "image": "http://www.sandipointe.com/im/pants/girls-ski-pants-6.jpg"
+    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
   }]
