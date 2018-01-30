@@ -74,7 +74,7 @@ def create_product_pages(product_list):
         add_to_html += "<img src=\"" + product_list[i].image + "\">"
         add_to_html += "<p>Price: " + str(product_list[i].price) + "</p>"
 
-        template_text = template_text.replace("{PRODUCT}", add_to_html)
+        template_text = template_text.replace("{PRODUCTS}", add_to_html)
 
         with open(path, "w") as new_file:
             new_file.write(template_text)
