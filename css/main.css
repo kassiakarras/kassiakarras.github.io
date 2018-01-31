@@ -4,6 +4,7 @@ p {
 
 img {
     max-height: 100px;
+
 }
 
 div {
@@ -13,6 +14,10 @@ div {
 header {
     height: 100px;
     background-color: white;
+}
+
+.product_image {
+    max-height: 400px;
 }
 
 .big_container {

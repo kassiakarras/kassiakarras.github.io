@@ -84,7 +84,7 @@ def create_product_pages(product_list):
         add_to_html = ""
         add_to_html += "<div>"
         add_to_html += "<p>Product name: " + product_list[i].name + "</p>"
-        add_to_html += "<img src=\"" + product_list[i].image + "\">"
+        add_to_html += "<img class=\"product_image\" src=\"" + product_list[i].image + "\">"
         add_to_html += "<p>Price: " + str(product_list[i].price) + "</p>"
 
         template_text = template_text.replace("{PRODUCTS}", add_to_html)
