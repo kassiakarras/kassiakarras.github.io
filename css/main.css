@@ -10,7 +10,12 @@ div {
     border-style: dashed;
 }
 
-.flex_container {
+header {
+    height: 100px;
+    background-color: white;
+}
+
+.big_container {
 
     justify-content: center;
 }
@@ -25,6 +30,13 @@ div {
 }
 
 .set_of_three {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header_info {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
