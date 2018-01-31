@@ -6,7 +6,6 @@ import time
 
 start_time = time.time()
 
-
 DIRECTORY_NAME = os.path.basename(os.path.dirname(os.path.realpath(__file__)))  # Name of current directory
 CURRENT_DIR = dir_path = os.path.dirname(os.path.realpath(__file__))  # Full path to current directory
 
@@ -18,9 +17,16 @@ products = []
 def create_index(product_list):
     f = codecs.open("templates/index.html", 'r', 'utf-8').read()
 
+    last = (len(product_list) - 1)
+
     add_to_html = ""
 
+    stage = 0
+
     for i in range(0, len(product_list)):
+
+        if stage % 3 == 0:
+            add_to_html += "<div class=\"set_of_three\">"
 
         add_to_html += "<div class=\"index_product\">"
         add_to_html += "<a class=\"post_link\" href=\"" + product_list[i].link + "\">" + \
@@ -28,11 +34,16 @@ def create_index(product_list):
         add_to_html += "<img src=\"" + product_list[i].image + "\">"
         add_to_html += "<p>" + product_list[i].type + ". " + str(product_list[i].price) + "</p>"
 
-        if i == (len(product_list) - 1):
-            add_to_html += "</div>\n                "
+        add_to_html += "</div>"
 
-        else:
-            add_to_html += "</div><br />\n                "
+        stage += 1
+
+        if (stage == 3) | (i == last):
+            add_to_html += "</div>"
+            stage = 0
+
+        if i == last:
+            add_to_html += "</div>"
 
     f = f.replace("{PRODUCTS}", add_to_html)
 
@@ -42,7 +53,6 @@ def create_index(product_list):
 
 def process_product_json():
     with open("products.json", "r", encoding="utf-8") as json_file:
-
         data = json.load(json_file)
 
         for i in range(0, len(data)):
@@ -57,7 +67,6 @@ def process_product_json():
 
 
 def create_product_pages(product_list):
-
     for i in range(0, len(product_list)):
 
         path = PRODUCT_DIR + "/" + product_list[i].name + ".html"

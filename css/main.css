@@ -11,9 +11,7 @@ div {
 }
 
 .flex_container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+
     justify-content: center;
 }
 
@@ -24,4 +22,11 @@ div {
 
 .index_product {
     width: 200px;
+}
+
+.set_of_three {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
