@@ -23,7 +23,7 @@ def create_index(product_list):
     for i in range(0, len(product_list)):
 
         add_to_html += "<div class=\"index_product\">"
-        add_to_html += "<a class=\"post_link\" href=\"" + "/" + product_list[i].link + "\">" + \
+        add_to_html += "<a class=\"post_link\" href=\"" + product_list[i].link + "\">" + \
                        product_list[i].name + "</a>"
         add_to_html += "<img src=\"" + product_list[i].image + "\">"
         add_to_html += "<p>" + product_list[i].type + ". " + str(product_list[i].price) + "</p>"
@@ -62,7 +62,9 @@ def create_product_pages(product_list):
 
         path = PRODUCT_DIR + "/" + product_list[i].name + ".html"
 
-        product_list[i].set_link(path)
+        rel_path = path.split(".io/", 1)[1]
+
+        product_list[i].set_link(rel_path)
 
         if os.path.exists(path):
             os.remove(path)
