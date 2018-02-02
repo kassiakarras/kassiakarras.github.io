@@ -69,7 +69,10 @@ def process_product_json():
 def create_product_pages(product_list):
     for i in range(0, len(product_list)):
 
-        path = PRODUCT_DIR + "/" + product_list[i].name + ".html"
+        name = product_list[i].name.strip()
+        name = name.lower()
+
+        path = PRODUCT_DIR + "/" + name + ".html"
 
         rel_path = path.split(".io/", 1)[1]
 

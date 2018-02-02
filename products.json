@@ -1,50 +1,14 @@
-[{
-    "name": "hatss",
+[
+
+
+
+  {
+    "name": "Hat",
     "type": "hat",
     "price": 19.99,
     "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
-  },
-
-  {
-    "name": "pants",
-    "type": "pants",
-    "price": 39.99,
-    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
-  },
-
-  {
-    "name": "bighat",
-    "type": "pants",
-    "price": 39.99,
-    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
-  },
-
-  {
-    "name": "smallhat",
-    "type": "pants",
-    "price": 39.99,
-    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
-  },
-
-  {
-    "name": "clownhat",
-    "type": "pants",
-    "price": 39.99,
-    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
-  },
-
-  {
-    "name": "stickers",
-    "type": "pants",
-    "price": 39.99,
-    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
-  },
-
-  {
-    "name": "keychains",
-    "type": "pants",
-    "price": 39.99,
-    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
   }
+
+
 
 ]
