@@ -7,6 +7,41 @@
     "type": "hat",
     "price": 19.99,
     "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
+  },
+
+  {
+    "name": "Not hat",
+    "type": "hat",
+    "price": 19.99,
+    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
+  },
+
+  {
+    "name": "blat",
+    "type": "hat",
+    "price": 19.99,
+    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
+  },
+
+  {
+    "name": "splat",
+    "type": "hat",
+    "price": 19.99,
+    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
+  },
+
+  {
+    "name": "oink",
+    "type": "hat",
+    "price": 19.99,
+    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
+  },
+
+  {
+    "name": "moo",
+    "type": "hat",
+    "price": 19.99,
+    "image": "http://images.wisegeek.com/stetson-hat-isolated-on-white.jpg"
   }
 
 
