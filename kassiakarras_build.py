@@ -61,7 +61,7 @@ def process_product_json():
                 data[i]['type'],
                 data[i]['price'],
                 data[i]['image'],
-                ""
+                "NULL"
             ))
     return products
 
