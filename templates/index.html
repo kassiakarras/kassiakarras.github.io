@@ -15,30 +15,50 @@
 
 <header>
 
-    <h1 align="center">Kassia</h1>
+    <h1 class="title">Kassia</h1>
 
 </header>
 
+<!-- <img class="mySlides"  src="https://ethanhouston.com/img/baylands.JPG">
+                <img class="mySlides"  src="https://ethanhouston.com/img/portrait.jpg">
+                <img class="mySlides"  src="https://ethanhouston.com/img/qr.JPG"> -->
 
-<div class="top">
 
-    <div class="header_info">
 
-        <p>About me</p>
-        <p>All items</p>
-        <p>Example</p>
+<img class="slidepicture" src="https://ethanhouston.com/img/portrait.jpg" >
 
+
+<div class="big_container">
+
+    <div class="row">
+        <div class="one columns"></div>
+
+        <div class="ten columns">
+
+            <!-- <img class="mySlides" src="https://ethanhouston.com/img/portrait.jpg" > -->
+
+        </div>
+
+        <div class="one columns"></div>
     </div>
 
-</div>
 
-<div class="row">
+    <div class="row">
 
-    <!-- Mayne need to add "twelve columns" or "whole"? This seems to work though -->
+        <div class="one columns"></div>
 
-    <div class="big_container">
+            <div class="ten columns">
 
-            {PRODUCTS}
+
+                <!-- Mayne need to add "twelve columns" or "whole"? This seems to work though -->
+                    {PRODUCTS}
+
+            </div>
+
+
+
+            <div class="one columns"></div>
+
 
         </div>
 
@@ -46,6 +66,24 @@
 </div>
 
 
+
+
+    <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    </script>
 
 </body>
 </html>

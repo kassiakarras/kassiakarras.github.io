@@ -42,8 +42,8 @@ def create_index(product_list):
             add_to_html += "</div>"
             stage = 0
 
-        if i == last:
-            add_to_html += "</div>"
+        #if i == last:
+         #   add_to_html += "</div>"
 
     f = f.replace("{PRODUCTS}", add_to_html)
 

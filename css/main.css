@@ -22,8 +22,14 @@ header {
 }
 
 .big_container {
-
+    flex: 1 0 auto;
     justify-content: center;
+}
+
+.title {
+    align-content: left;
+    padding-left: 30%;
+    font-family: monospace, sans-serif;
 }
 
 .top {
@@ -48,3 +54,27 @@ header {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.slides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+
+
+
+
+
+}
+
+
+.slidepicture {
+    flex-shrink: 0;
+    display: block;
+    margin: 0 auto;
+
+    height:900px;
+
+
+}
+
