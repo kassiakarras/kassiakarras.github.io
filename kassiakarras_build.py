@@ -13,6 +13,8 @@ PRODUCT_DIR = CURRENT_DIR + "/products"  # Gets path to blog folder
 
 products = []
 
+COLUMNS = 3
+
 
 def create_index(product_list):
     f = codecs.open("templates/index.html", 'r', 'utf-8').read()
@@ -25,25 +27,22 @@ def create_index(product_list):
 
     for i in range(0, len(product_list)):
 
-        if stage % 3 == 0:
+        if stage % COLUMNS == 0:
             add_to_html += "<div class=\"set_of_three\">"
 
         add_to_html += "<div class=\"index_product\">"
-        add_to_html += "<img src=\"" + product_list[i].image + "\">"
+        add_to_html += "<a href=\"" + product_list[i].link + "\"><img src=\"" + product_list[i].image + "\"></a>"
         add_to_html += "<a class=\"post_link\" href=\"" + product_list[i].link + "\">" + \
                        product_list[i].name + "</a>"
-        add_to_html += "<p class=\"price_text\">" + str(product_list[i].price) + "</p>"
+        add_to_html += "<p class=\"price_text\">" + "$" + str(product_list[i].price) + "</p>"
 
         add_to_html += "</div>"
 
         stage += 1
 
-        if (stage == 3) | (i == last):
+        if (stage == COLUMNS) | (i == last):
             add_to_html += "</div>"
             stage = 0
-
-        #if i == last:
-         #   add_to_html += "</div>"
 
     f = f.replace("{PRODUCTS}", add_to_html)
 
