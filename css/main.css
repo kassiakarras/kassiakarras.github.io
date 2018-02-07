@@ -17,8 +17,9 @@ html {
 }
 
 header {
-    background-color: #1d1d1d;
-    height: 30px;
+    background-color: #ffffff;
+    height: 70px;
+    display: block;
 }
 
 footer {
@@ -32,20 +33,31 @@ img {
 }
 
 div {
-    border-style: dashed;
+
 }
 
 body {
     font-family: ProximaNova, sans-serif;
     font-size: 14pt;
     color: #666666;
-    background-color: white;
+    background-color: #aec6cf;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: flex;
     flex-direction: column;
+}
+
+.kass_name {
+    font-family: ProximaNova, monospace;
+    text-align: left;
+    padding-left:20%;
+    padding-top: 0;
+    vertical-align: top;
+    position:absolute;
+    top:5px;
+    margin:5px;
 }
 
 
@@ -63,18 +75,37 @@ body {
     margin: 0 auto;
 }
 
+.slides {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
 
 .index_product {
-    width: 200px;
+    width: 250px;
+    text-align: center;
+
 }
 
 .set_of_three {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+
 }
 
 .product_image {
     max-height: 400px;
 }
+
+
+.post_link {
+    overflow: visible;
+}
+
+.price_text {
+    text-align: center;
+}
+

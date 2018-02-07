@@ -29,10 +29,10 @@ def create_index(product_list):
             add_to_html += "<div class=\"set_of_three\">"
 
         add_to_html += "<div class=\"index_product\">"
+        add_to_html += "<img src=\"" + product_list[i].image + "\">"
         add_to_html += "<a class=\"post_link\" href=\"" + product_list[i].link + "\">" + \
                        product_list[i].name + "</a>"
-        add_to_html += "<img src=\"" + product_list[i].image + "\">"
-        add_to_html += "<p>" + product_list[i].type + ". " + str(product_list[i].price) + "</p>"
+        add_to_html += "<p class=\"price_text\">" + str(product_list[i].price) + "</p>"
 
         add_to_html += "</div>"
 
