@@ -1,72 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html>
+
+    <head>
 
 
-    <link rel="stylesheet" href="css/pills.min.css">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/pills.min.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
 
 
-</head>
-<body>
+    </head>
 
-<header>
+    <body>
 
-    <h1 class="title">Kassia</h1>
+        <header></header>
 
-</header>
-
-<!-- <img class="mySlides"  src="https://ethanhouston.com/img/baylands.JPG">
-                <img class="mySlides"  src="https://ethanhouston.com/img/portrait.jpg">
-                <img class="mySlides"  src="https://ethanhouston.com/img/qr.JPG"> -->
+        <div class="wrapper">
 
 
+            <div class="row">
+                <div class="two columns"></div>
 
-<img class="slidepicture" src="https://ethanhouston.com/img/portrait.jpg" >
+                <div class="eight columns">
 
+                    <div class="slideshow">
 
-<div class="big_container">
-
-    <div class="row">
-        <div class="one columns"></div>
-
-        <div class="ten columns">
-
-            <!-- <img class="mySlides" src="https://ethanhouston.com/img/portrait.jpg" > -->
-
-        </div>
-
-        <div class="one columns"></div>
-    </div>
+                        <img class="slides" src="https://ethanzh.github.io/img/baylands.JPG" title="Baylands in Mountain View, California">
+                        <img class="slides" src="https://ethanzh.github.io/img/portrait.jpg" title="Baylands in Mountain View, California">
 
 
-    <div class="row">
+                    </div>
 
-        <div class="one columns"></div>
+                </div>
 
-            <div class="ten columns">
+                <div class="two columns"></div>
+            </div>
+
+            <div class="row">
+
+                <div class="two columns">
 
 
-                <!-- Mayne need to add "twelve columns" or "whole"? This seems to work though -->
+
+                </div>
+
+                <div class="eight columns">
+
+
                     {PRODUCTS}
 
+
+                </div>
+
+                <div class="two columns"></div>
             </div>
 
 
 
-            <div class="one columns"></div>
+    </div>
 
+    <footer>
 
-        </div>
-
-
-</div>
-
-
-
+    </footer>
 
     <script>
     var myIndex = 0;
@@ -74,7 +68,7 @@
 
     function carousel() {
         var i;
-        var x = document.getElementsByClassName("mySlides");
+        var x = document.getElementsByClassName("slides");
         for (i = 0; i < x.length; i++) {
            x[i].style.display = "none";
         }
@@ -85,5 +79,10 @@
     }
     </script>
 
-</body>
+    </body>
+
+
 </html>
+
+
+
