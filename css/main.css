@@ -18,9 +18,12 @@ html {
 
 header {
     background-color: #aad7ff;
-    height: 40px;
-    display: block;
+    height: 58px;
+    background-image: url("../text.JPG");
+    background-repeat: repeat-x;
 }
+
+
 
 footer {
     background-color: #ff8c00;
@@ -35,6 +38,7 @@ img {
 div {
 
 }
+
 
 
 
@@ -70,18 +74,27 @@ body {
 }
 
 .left {
-   background-color: blue;
+   background-color: #8cbcff;
     margin: 10px 10px 10px 5px;
+    width:300px;
 }
 
 .middle {
-    background-color: red;
+    background-color: #e28476;
     margin: 10px;
+    width:300px;
 }
 
 .right {
-    background-color: yellow;
+    background-color: #edeb7b;
     margin: 10px 5px 10px 10px;
+    width:300px;
+}
+
+.button_text {
+    font-size: 14px;
+    color: black;
+    text-align: center;
 }
 
 .logo {
