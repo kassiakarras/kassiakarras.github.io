@@ -6,25 +6,7 @@
 {"name":"Civic","type":"Honda","price":13.05,"image":"http://dummyimage.com/250x250.png/dddddd/000000"},
 {"name":"S4","type":"Audi","price":22.36,"image":"http://dummyimage.com/250x250.png/dddddd/000000"},
 {"name":"G-Class","type":"Mercedes-Benz","price":53.85,"image":"http://dummyimage.com/250x250.png/5fa2dd/ffffff"},
-{"name":"TrailBlazer","type":"Chevrolet","price":54.76,"image":"http://dummyimage.com/250x250.png/cc0000/ffffff"},
-{"name":"CX-7","type":"Mazda","price":12.88,"image":"http://dummyimage.com/250x250.png/dddddd/000000"},
-{"name":"A8","type":"Audi","price":68.62,"image":"http://dummyimage.com/250x250.png/5fa2dd/ffffff"},
-{"name":"Ranger","type":"Ford","price":32.83,"image":"http://dummyimage.com/250x250.png/cc0000/ffffff"},
-{"name":"924","type":"Porsche","price":4.96,"image":"http://dummyimage.com/250x250.png/cc0000/ffffff"},
-{"name":"Mazda2","type":"Mazda","price":57.64,"image":"http://dummyimage.com/250x250.png/5fa2dd/ffffff"},
-{"name":"A8","type":"Audi","price":56.79,"image":"http://dummyimage.com/250x250.png/cc0000/ffffff"},
-{"name":"Protege","type":"Mazda","price":97.64,"image":"http://dummyimage.com/250x250.png/cc0000/ffffff"},
-{"name":"Camaro","type":"Chevrolet","price":56.05,"image":"http://dummyimage.com/250x250.png/ff4444/ffffff"},
-{"name":"Durango","type":"Dodge","price":94.18,"image":"http://dummyimage.com/250x250.png/ff4444/ffffff"},
-{"name":"62","type":"Maybach","price":43.2,"image":"http://dummyimage.com/250x250.png/cc0000/ffffff"},
-{"name":"Rodeo","type":"Isuzu","price":52.63,"image":"http://dummyimage.com/250x250.png/5fa2dd/ffffff"},
-{"name":"Diablo","type":"Lamborghini","price":18.87,"image":"http://dummyimage.com/250x250.png/dddddd/000000"},
-{"name":"MDX","type":"Acura","price":9.06,"image":"http://dummyimage.com/250x250.png/dddddd/000000"},
-{"name":"IS","type":"Lexus","price":5.74,"image":"http://dummyimage.com/250x250.png/5fa2dd/ffffff"},
-{"name":"Yukon","type":"GMC","price":90.74,"image":"http://dummyimage.com/250x250.png/5fa2dd/ffffff"},
-{"name":"Miata MX-5","type":"Mazda","price":92.03,"image":"http://dummyimage.com/250x250.png/dddddd/000000"},
-{"name":"Concorde","type":"Chrysler","price":60.94,"image":"http://dummyimage.com/250x250.png/cc0000/ffffff"},
-{"name":"Tahoe","type":"Chevrolet","price":70.33,"image":"http://dummyimage.com/250x250.png/cc0000/ffffff"}
+{"name":"TrailBlazer","type":"Chevrolet","price":54.76,"image":"http://dummyimage.com/250x250.png/cc0000/ffffff"}
 
 
 
