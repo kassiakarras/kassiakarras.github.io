@@ -13,11 +13,11 @@ a {
 }
 
 html {
-    background-color: #1d1d1d;
+    background-color: #aad7ff;
 }
 
 header {
-    background-color: #faf0e6;
+    background-color: #aad7ff;
     height: 70px;
     display: block;
 }
@@ -40,7 +40,8 @@ body {
     font-family: ProximaNova, sans-serif;
     font-size: 14pt;
     color: #666666;
-    background-color: #aec6cf;
+    //background-color: #aec6cf;
+    background-image: url("../sketches/bears2.jpg");
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -86,6 +87,8 @@ body {
     width: 250px;
     text-align: center;
 
+    background-color: rgba(255, 255, 255, 0.8);
+
 }
 
 .set_of_three {
@@ -93,6 +96,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-bottom: 30px;
 
 }
 
