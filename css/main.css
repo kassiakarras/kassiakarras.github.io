@@ -71,6 +71,7 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-evenly;
+    text-align: center;
 }
 
 .left {
@@ -78,6 +79,7 @@ body {
     background-color: #e28476;
     margin: 10px 10px 10px 5px;
     width:225px;
+    color: red;
 }
 
 .middle {
@@ -93,9 +95,12 @@ body {
 }
 
 .button_text {
-    font-size: 14px;
+    font-size: 38px;
     color: black;
     text-align: center;
+    border-bottom: 0;
+    display: inline-block;
+    background-color: red;
 }
 
 .logo {

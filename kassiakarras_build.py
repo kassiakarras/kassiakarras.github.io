@@ -16,6 +16,19 @@ products = []
 COLUMNS = 3
 
 
+class Product:
+
+    def __init__(self, name, type, price, image, link):
+        self.name = name
+        self.type = type
+        self.price = price
+        self.image = image
+        self.link = link
+
+    def set_link(self, link):
+        self.link = link
+
+
 def create_index(product_list):
     f = codecs.open("templates/index.html", 'r', 'utf-8').read()
 
@@ -48,6 +61,25 @@ def create_index(product_list):
 
     with open("index.html", "w") as new_file:
         new_file.write(f)
+
+
+def create_additional_page(name):
+    with open("templates/" + name + ".html", "r") as current_template:
+        template_string = current_template.read()
+
+        if os.path.exists(name):
+            shutil.rmtree(name)
+
+        os.mkdir(name)
+
+        replacements = {
+            "TEST": "<h1> This is a test! </h1>"
+        }
+
+        finished_html = html_replace(template_string, replacements)
+
+        with open(name + "/index.html", "w") as new_html:
+            new_html.write(finished_html)
 
 
 def process_product_json():
@@ -101,17 +133,15 @@ def reset_product_dir():
         os.makedirs("products")
 
 
-class Product:
+def html_replace(original, replace_dict):
 
-    def __init__(self, name, type, price, image, link):
-        self.name = name
-        self.type = type
-        self.price = price
-        self.image = image
-        self.link = link
+    for key, value in replace_dict.items():
+        original = original.replace(
+            "{" + key + "}",
+            str(value)
+        )
 
-    def set_link(self, link):
-        self.link = link
+    return original
 
 
 reset_product_dir()
@@ -121,5 +151,10 @@ process_product_json()
 create_product_pages(products)
 
 create_index(products)
+
+extras = ["shop", "lookbook", "portfolio"]
+
+for name in extras:
+    create_additional_page(name)
 
 print("--- %s seconds ---" % (time.time() - start_time))
