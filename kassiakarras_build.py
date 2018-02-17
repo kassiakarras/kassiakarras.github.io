@@ -29,14 +29,17 @@ class Product:
         self.link = link
 
 
-def create_index(product_list):
-    f = codecs.open("templates/index.html", 'r', 'utf-8').read()
-
+def create_product_thumbnails(product_list, subset):
     last = (len(product_list) - 1)
 
     add_to_html = ""
 
     stage = 0
+
+    if subset == 0:
+        pass
+    else:
+        product_list = product_list[0:subset]  # Only show first 6 things on home page
 
     for i in range(0, len(product_list)):
 
@@ -57,6 +60,14 @@ def create_index(product_list):
             add_to_html += "</div>"
             stage = 0
 
+    return add_to_html
+
+
+def create_index(product_list):
+    f = codecs.open("templates/index.html", 'r', 'utf-8').read()
+
+    add_to_html = create_product_thumbnails(product_list, 6)
+
     f = f.replace("{PRODUCTS}", add_to_html)
 
     with open("index.html", "w") as new_file:
@@ -72,8 +83,13 @@ def create_additional_page(name):
 
         os.mkdir(name)
 
+        if name == "shop":
+            add_to_html = create_product_thumbnails(products, 0)
+        else:
+            add_to_html = "<p> test </p>"
+
         replacements = {
-            "TEST": "<h1> This is a test! </h1>"
+            "TEST": add_to_html
         }
 
         finished_html = html_replace(template_string, replacements)
