@@ -143,7 +143,7 @@ def create_product_pages(product_list):
         add_to_html += "<div>"
         add_to_html += "<p>Product name: " + product_list[i].name + "</p>"
         add_to_html += "<img class=\"product_image\" src=\"" + product_list[i].image + "\">"
-        add_to_html += "<p>Price: " + str(product_list[i].price) + "</p>"
+        add_to_html += "<p>Price: " + str(product_list[i].price) + "</p></div>"
 
         replacements = {
 
@@ -164,6 +164,11 @@ def create_product_pages(product_list):
                                     "</tr><tr><td><select name=\"os0\"><option value=\"Small\">Small</option>" \
                                     "<option value=\"Medium\">Medium</option><option value=\"Large\">Large</option>" \
                                     "</select> </td></tr></table>"
+
+        if product_list[i].type == "input":
+            replacements["TABLE"] = "<table><tr><td><input type=\"hidden\" name=\"on0\" value=\"Hi\">Hi</td>" \
+                                    "</tr><tr><td><input type=\"text\" name=\"os0\" " \
+                                    "maxlength=\"200\"></td></tr></table>"
 
         template_text = html_replace(template_text, replacements)
 

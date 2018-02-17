@@ -15,30 +15,30 @@
   },
   {
     "name": "Civic",
-    "type": "hat",
+    "type": "input",
     "price": 13.05,
     "image": "http://dummyimage.com/250x250.png/dddddd/000000",
-    "hosted_button_id": ""
+    "hosted_button_id": "QMBCAWLCZ856L"
   },
   {
     "name": "S4",
-    "type": "hat",
+    "type": "input",
     "price": 22.36,
     "image": "http://dummyimage.com/250x250.png/dddddd/000000",
-    "hosted_button_id": ""
+    "hosted_button_id": "QMBCAWLCZ856L"
   },
   {
     "name": "G-Class",
-    "type": "hat",
+    "type": "input",
     "price": 53.85,
     "image": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
-    "hosted_button_id": ""
+    "hosted_button_id": "QMBCAWLCZ856L"
   },
   {
     "name": "TrailBlazer",
-    "type": "hat",
+    "type": "input",
     "price": 54.76,
     "image": "http://dummyimage.com/250x250.png/cc0000/ffffff",
-    "hosted_button_id": ""
+    "hosted_button_id": "QMBCAWLCZ856L"
   }
 ]
