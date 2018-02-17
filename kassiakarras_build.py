@@ -145,7 +145,7 @@ def create_product_pages(product_list):
         add_to_html += "<img class=\"product_image\" src=\"" + product_list[i].image + "\">"
         add_to_html += "<p>Price: " + str(product_list[i].price) + "</p>"
 
-        if product_list[i].id != "NULL":
+        if product_list[i].id != "NULL":  # Only replaces if there's an ID
             template_text = template_text.replace("{BUTTON_ID}", product_list[i].id)
 
         template_text = template_text.replace("{PRODUCTS}", add_to_html)
