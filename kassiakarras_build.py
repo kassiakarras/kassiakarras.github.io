@@ -160,10 +160,10 @@ def create_product_pages(product_list):
 
         if product_list[i].type in has_size:
 
-            replacements["TABLE"] = "<table><tr><td><input type=\"hidden\" name=\"on0\" value=\"Size\">"
-            'Size</td></tr><tr><td><select name="os0"><option value="Small">'
-            'Small</option><option value="Medium">Medium</option'
-            '><option value="Large">Large</option></select> </td></tr></table>'
+            replacements["TABLE"] = "<table><tr><td><input type=\"hidden\" name=\"on0\" value=\"Size\">Size</td>" \
+                                    "</tr><tr><td><select name=\"os0\"><option value=\"Small\">Small</option>" \
+                                    "<option value=\"Medium\">Medium</option><option value=\"Large\">Large</option>" \
+                                    "</select> </td></tr></table>"
 
         template_text = html_replace(template_text, replacements)
 
