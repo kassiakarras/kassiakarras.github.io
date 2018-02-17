@@ -145,19 +145,27 @@ def create_product_pages(product_list):
         add_to_html += "<img class=\"product_image\" src=\"" + product_list[i].image + "\">"
         add_to_html += "<p>Price: " + str(product_list[i].price) + "</p>"
 
+        replacements = {
+
+            "PRODUCTS": add_to_html,
+
+            "BUTTON_ID": "",
+
+            "TABLE": ""
+
+        }
+
         if product_list[i].id != "NULL":  # Only replaces if there's an ID
-            template_text = template_text.replace("{BUTTON_ID}", product_list[i].id)
+            replacements["BUTTON_ID"] = product_list[i].id
 
         if product_list[i].type in has_size:
-            template_text = template_text.replace("{TABLE}",
-                                                  "<table><tr><td><input type=\"hidden\" name=\"on0\" value=\"Size\">"
-                                                  "Size</td></tr><tr><td><select name=\"os0\"><option value=\"Small\">"
-                                                  "Small</option><option value=\"Medium\">Medium</option"
-                                                  "><option value=\"Large\">Large</option></select> </td></tr></table>")
-        else:
-            template_text = template_text.replace("{TABLE}", "")
 
-        template_text = template_text.replace("{PRODUCTS}", add_to_html)
+            replacements["TABLE"] = "<table><tr><td><input type=\"hidden\" name=\"on0\" value=\"Size\">"
+            'Size</td></tr><tr><td><select name="os0"><option value="Small">'
+            'Small</option><option value="Medium">Medium</option'
+            '><option value="Large">Large</option></select> </td></tr></table>'
+
+        template_text = html_replace(template_text, replacements)
 
         with open(path, "w") as new_file:
             new_file.write(template_text)
