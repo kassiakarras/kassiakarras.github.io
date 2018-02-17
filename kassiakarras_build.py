@@ -18,12 +18,13 @@ COLUMNS = 3
 
 class Product:
 
-    def __init__(self, name, type, price, image, link):
+    def __init__(self, name, type, price, image, link, id):
         self.name = name
         self.type = type
         self.price = price
         self.image = image
         self.link = link
+        self.id = id
 
     def set_link(self, link):
         self.link = link
@@ -103,12 +104,19 @@ def process_product_json():
         data = json.load(json_file)
 
         for i in range(0, len(data)):
+
+            if data[i]['hosted_button_id'] != "":
+                button_id = data[i]['hosted_button_id']
+            else:
+                button_id = "NULL"
+
             products.append(Product(
                 data[i]['name'],
                 data[i]['type'],
                 data[i]['price'],
                 data[i]['image'],
-                "NULL"
+                "NULL",
+                button_id
             ))
     return products
 
@@ -136,6 +144,9 @@ def create_product_pages(product_list):
         add_to_html += "<p>Product name: " + product_list[i].name + "</p>"
         add_to_html += "<img class=\"product_image\" src=\"" + product_list[i].image + "\">"
         add_to_html += "<p>Price: " + str(product_list[i].price) + "</p>"
+
+        if product_list[i].id != "NULL":
+            template_text = template_text.replace("{BUTTON_ID}", product_list[i].id)
 
         template_text = template_text.replace("{PRODUCTS}", add_to_html)
 
