@@ -17,10 +17,8 @@ html {
 }
 
 header {
-    background-color: #e28476;
     height: 58px;
-    background-image: url("../text.JPG");
-    background-repeat: repeat-x;
+    background: #e28476 url("../text.JPG") repeat-x;
 }
 
 
