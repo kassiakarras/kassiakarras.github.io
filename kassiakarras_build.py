@@ -148,6 +148,15 @@ def create_product_pages(product_list):
         if product_list[i].id != "NULL":  # Only replaces if there's an ID
             template_text = template_text.replace("{BUTTON_ID}", product_list[i].id)
 
+        if product_list[i].type in has_size:
+            template_text = template_text.replace("{TABLE}",
+                                                  "<table><tr><td><input type=\"hidden\" name=\"on0\" value=\"Size\">"
+                                                  "Size</td></tr><tr><td><select name=\"os0\"><option value=\"Small\">"
+                                                  "Small</option><option value=\"Medium\">Medium</option"
+                                                  "><option value=\"Large\">Large</option></select> </td></tr></table>")
+        else:
+            template_text = template_text.replace("{TABLE}", "")
+
         template_text = template_text.replace("{PRODUCTS}", add_to_html)
 
         with open(path, "w") as new_file:
@@ -171,6 +180,10 @@ def html_replace(original, replace_dict):
     return original
 
 
+has_size = ["shirt"]
+
+extras = ["shop", "lookbook", "portfolio"]
+
 reset_product_dir()
 
 process_product_json()
@@ -178,8 +191,6 @@ process_product_json()
 create_product_pages(products)
 
 create_index(products)
-
-extras = ["shop", "lookbook", "portfolio"]
 
 for name in extras:
     create_additional_page(name)
