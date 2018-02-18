@@ -13,7 +13,7 @@ a {
 }
 
 html {
-    background-color: #aad7ff;
+    background-color: whitesmoke;
 }
 
 header {
@@ -45,7 +45,8 @@ body {
     font-size: 14pt;
     color: #666666;
     //background-color: #aec6cf;
-    background-image: url("../sketches/bears2.jpg");
+    // background-image: url("../sketches/bears2.jpg");
+    background-color: whitesmoke;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;

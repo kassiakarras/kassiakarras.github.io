@@ -4,6 +4,7 @@
     "type": "shirt",
     "price": 76.07,
     "image": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "hover_image": "http://dummyimage.com/250x250.png/dddddd/000000",
     "hosted_button_id": "7E6B4XYHF9BBA"
   },
   {
@@ -11,6 +12,7 @@
     "type": "shirt",
     "price": 57.59,
     "image": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "hover_image": "http://dummyimage.com/250x250.png/dddddd/000000",
     "hosted_button_id": "RF7N9S7ZK8WG4"
   },
   {
@@ -18,6 +20,7 @@
     "type": "input",
     "price": 13.05,
     "image": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "hover_image": "http://dummyimage.com/250x250.png/dddddd/000000",
     "hosted_button_id": "QMBCAWLCZ856L"
   },
   {
@@ -25,6 +28,7 @@
     "type": "input",
     "price": 22.36,
     "image": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "hover_image": "http://dummyimage.com/250x250.png/dddddd/000000",
     "hosted_button_id": "QMBCAWLCZ856L"
   },
   {
@@ -32,6 +36,7 @@
     "type": "input",
     "price": 53.85,
     "image": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "hover_image": "http://dummyimage.com/250x250.png/dddddd/000000",
     "hosted_button_id": "QMBCAWLCZ856L"
   },
   {
@@ -39,6 +44,7 @@
     "type": "input",
     "price": 54.76,
     "image": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "hover_image": "http://dummyimage.com/250x250.png/dddddd/000000",
     "hosted_button_id": "QMBCAWLCZ856L"
   }
 ]

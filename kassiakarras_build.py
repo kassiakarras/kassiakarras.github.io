@@ -18,11 +18,12 @@ COLUMNS = 3
 
 class Product:
 
-    def __init__(self, name, type, price, image, link, id):
+    def __init__(self, name, type, price, image, hover_image, link, id):
         self.name = name
         self.type = type
         self.price = price
         self.image = image
+        self.hover_image = hover_image
         self.link = link
         self.id = id
 
@@ -48,10 +49,16 @@ def create_product_thumbnails(product_list, subset):
             add_to_html += "<div class=\"set_of_three\">"
 
         add_to_html += "<div class=\"index_product\">"
-        add_to_html += "<a href=\"" + product_list[i].link + "\"><img src=\"" + product_list[i].image + "\"></a>"
-        add_to_html += "<a class=\"post_link\" href=\"" + product_list[i].link + "\">" + \
-                       product_list[i].name + "</a>"
-        add_to_html += "<p class=\"price_text\">" + "$" + str(product_list[i].price) + "</p>"
+        add_to_html += "<a href=\"" + product_list[i].link + "\">"
+
+        add_to_html += create_html_tag("img", "",
+                                       onmouseover="this.src=\'" + product_list[i].hover_image + "\'",
+                                       onmouseout="this.src=\'" + product_list[i].image + "\'",
+                                       src=product_list[i].image)
+
+        add_to_html += create_html_tag("a", product_list[i].name, css="post_link", href=product_list[i].link)
+
+        add_to_html += create_html_tag("p", "$" + str(product_list[i].price), css="price_text")
 
         add_to_html += "</div>"
 
@@ -115,7 +122,8 @@ def process_product_json():
                 data[i]['type'],
                 data[i]['price'],
                 data[i]['image'],
-                "NULL",
+                data[i]['hover_image'],
+                "NULL",  # Link
                 button_id
             ))
     return products
@@ -191,6 +199,22 @@ def html_replace(original, replace_dict):
         )
 
     return original
+
+
+def create_html_tag(tag, content, **kwargs):
+
+    html = "<" + tag
+
+    for key, value in kwargs.items():
+
+        if key == "css":
+            key = "class"
+
+        html += " " + key + "=\"" + value + "\""
+
+    html += ">" + content + "</" + tag + ">"
+
+    return html
 
 
 has_size = ["shirt"]
