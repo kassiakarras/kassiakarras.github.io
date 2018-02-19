@@ -13,7 +13,7 @@ a {
 }
 
 html {
-    background-color: #B5EEFB;
+    background-color: whitesmoke;
 }
 
 
@@ -117,15 +117,12 @@ and (max-width: 768px){
 
 
     .head {
-
-        margin-top:-22px;
         width: 100%;
-         height: 400px;
          position:absolute;
-        background: url('../sketches/kassiakarras.png') repeat-x;
+        margin-top:-170px;
+        background: url('../sketches/kassiakarras.png')  no-repeat center;
         background-size: 300px 100px;
         padding-bottom: 100px;
-        margin-left: 40px;
 
     }
 
