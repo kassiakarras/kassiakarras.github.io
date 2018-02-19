@@ -14,11 +14,12 @@ a {
 
 html {
     background-color: whitesmoke;
+    // #B5EEFB
 }
 
 header {
     height: 58px;
-    background: #e28476 url("../text.JPG") repeat-x;
+    background: #e28476 url("../sketches/kassiakarras.png") repeat-x;
 }
 
 
