@@ -18,7 +18,7 @@ html {
 
 header {
     height: 58px;
-    background: #e28476 url("../sketches/kassiakarras.png") repeat-x;
+    background: url("../sketches/kassiakarras.png") repeat-x;
 }
 
 
