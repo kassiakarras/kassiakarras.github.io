@@ -15,6 +15,10 @@ products = []
 
 COLUMNS = 3
 
+def test():
+    with open("test.txt", "w") as test:
+        test.write("test")
+
 
 class Product:
 
@@ -57,18 +61,6 @@ def create_product_thumbnails(product_list, subset):
                                        src=product_list[i].image)
 
         add_to_html += create_html_tag("a", product_list[i].name, css="post_link", href=product_list[i].link)
-
-        # print(product_list[i].link)
-
-        PATH = os.path.join("products", product_list[i].name.lower())
-
-        already_exists = os.path.exists(PATH)
-
-        if already_exists:
-            shutil.rmtree(PATH)
-            os.mkdir(PATH)
-        else:
-            os.mkdir(PATH)
 
         add_to_html += create_html_tag("p", "$" + str(product_list[i].price), css="price_text")
 
@@ -147,26 +139,18 @@ def create_product_pages(product_list):
         name = product_list[i].name.strip()
         name = name.lower()
 
-        path = os.path.join(PRODUCT_DIR, name)
-        print(path)
+        link_path = os.path.join("products", name)
 
-        path_with_index = os.path.join(PRODUCT_DIR, name, "index.html")
-        print(path_with_index)
+        if os.path.exists(link_path):
+            shutil.rmtree(link_path)
 
-        test_path = PRODUCT_DIR + "/" + name
+        os.mkdir(link_path)
 
+        index_path = os.path.join(link_path, "index.html")
 
-        os.mkdir(path)
+        product_list[i].set_link(link_path)
 
-        rel_path = path.split(".io/", 1)[1]
-
-        product_list[i].set_link(path)
-
-        if os.path.exists(path):
-            #os.remove(path)
-            shutil.rmtree(path)
-
-        with open("templates/product.html", "r") as template_file:
+        with open(os.path.join("templates", "product.html"), "r") as template_file:
             template_text = template_file.read()
 
         add_to_html = ""
@@ -202,14 +186,8 @@ def create_product_pages(product_list):
 
         template_text = html_replace(template_text, replacements)
 
-        with open(path_with_index, "w") as new_file:
+        with open(index_path, "w") as new_file:
             new_file.write(template_text)
-
-
-def reset_product_dir():
-    if os.path.exists("products/"):
-        shutil.rmtree("products")
-        os.makedirs("products")
 
 
 def html_replace(original, replace_dict):
@@ -239,11 +217,21 @@ def create_html_tag(tag, content, **kwargs):
     return html
 
 
+def reset_dirs():
+
+    folders_to_reset = ["products"]
+
+    for i in folders_to_reset:
+        if os.path.exists(i):
+            shutil.rmtree(i)
+            os.makedirs(i)
+
+
 has_size = ["shirt"]
 
 extras = ["shop", "lookbook", "portfolio"]
 
-reset_product_dir()
+#reset_dirs()
 
 process_product_json()
 
@@ -255,3 +243,6 @@ for name in extras:
     create_additional_page(name)
 
 print("--- %s seconds ---" % (time.time() - start_time))
+
+
+
