@@ -155,6 +155,7 @@ def create_product_pages(product_list):
 
         test_path = PRODUCT_DIR + "/" + name
 
+
         os.mkdir(path)
 
         rel_path = path.split(".io/", 1)[1]
