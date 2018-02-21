@@ -58,6 +58,18 @@ def create_product_thumbnails(product_list, subset):
 
         add_to_html += create_html_tag("a", product_list[i].name, css="post_link", href=product_list[i].link)
 
+        # print(product_list[i].link)
+
+        PATH = os.path.join("products", product_list[i].name.lower())
+
+        already_exists = os.path.exists(PATH)
+
+        if already_exists:
+            shutil.rmtree(PATH)
+            os.mkdir(PATH)
+        else:
+            os.mkdir(PATH)
+
         add_to_html += create_html_tag("p", "$" + str(product_list[i].price), css="price_text")
 
         add_to_html += "</div>"
@@ -135,14 +147,23 @@ def create_product_pages(product_list):
         name = product_list[i].name.strip()
         name = name.lower()
 
-        path = PRODUCT_DIR + "/" + name + ".html"
+        path = os.path.join(PRODUCT_DIR, name)
+        print(path)
+
+        path_with_index = os.path.join(PRODUCT_DIR, name, "index.html")
+        print(path_with_index)
+
+        test_path = PRODUCT_DIR + "/" + name
+
+        os.mkdir(path)
 
         rel_path = path.split(".io/", 1)[1]
 
-        product_list[i].set_link(rel_path)
+        product_list[i].set_link(path)
 
         if os.path.exists(path):
-            os.remove(path)
+            #os.remove(path)
+            shutil.rmtree(path)
 
         with open("templates/product.html", "r") as template_file:
             template_text = template_file.read()
@@ -180,7 +201,7 @@ def create_product_pages(product_list):
 
         template_text = html_replace(template_text, replacements)
 
-        with open(path, "w") as new_file:
+        with open(path_with_index, "w") as new_file:
             new_file.write(template_text)
 
 
