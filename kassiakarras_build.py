@@ -60,6 +60,8 @@ def create_product_thumbnails(product_list, subset):
                                        onmouseout="this.src=\'" + product_list[i].image + "\'",
                                        src=product_list[i].image)
 
+        add_to_html += "</a>"
+
         add_to_html += create_html_tag("a", product_list[i].name, css="post_link", href=product_list[i].link)
 
         add_to_html += create_html_tag("p", "$" + str(product_list[i].price), css="price_text")
