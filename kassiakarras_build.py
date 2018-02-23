@@ -108,7 +108,7 @@ def create_additional_page(name):
 
         finished_html = html_replace(template_string, replacements)
 
-        with open(name + "/index.html", "w") as new_html:
+        with open(os.path.join(name, "index.html"), "w") as new_html:
             new_html.write(finished_html)
 
 
@@ -233,7 +233,7 @@ has_size = ["shirt"]
 
 extras = ["shop", "lookbook", "portfolio"]
 
-#reset_dirs()
+reset_dirs()
 
 process_product_json()
 
