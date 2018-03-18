@@ -2,10 +2,12 @@
 
 <head>
 
-
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
     <link rel="stylesheet" href="css/pills.min.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/home.js"></script>
 
     <title>kass</title>
 
@@ -163,14 +165,8 @@
 
     <div class="row">
 
-        <form action="">
-
-            <input type="text" name="email">
-
-            <input type="submit" value="Submit">
-
-
-        </form>
+        Message:<input type="text" id="message"><button onclick="writeEmail()">Send message</button>
+        <p id="testblock"></p>
 
     </div>
 
@@ -184,6 +180,8 @@
     <a href="https://ethanhouston.com">Webmaster</a>
 
 </footer>
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 
 <script>
     var myIndex = 0;
