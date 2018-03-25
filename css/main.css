@@ -209,6 +209,9 @@ and (max-width: 768px){
     text-align: center;
 }
 
+.email {
+    background-color: blue;
+}
 
 .dropbtn {
     background-color: #4CAF50;
