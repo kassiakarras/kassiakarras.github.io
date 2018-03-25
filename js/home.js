@@ -14,7 +14,7 @@ const database = firebase.database();
 
 let writeEmail = () => {
 
-    let email = document.getElementById(`message`).value;
+    let email = document.getElementById(`emailinput`).value;
 
     database.ref(`mailing_list`).push({
 
@@ -29,17 +29,20 @@ let getEmails = () => {
 
     let emails = [];
 
+
     ref.on(`value`, function (snapshot) {
         snapshot.forEach(function (child) {
 
-            emails.push(child.val()[`email`]);
+            emails.push(child.val()[`email`].toString());
 
 
         })
     });
 
-    console.log(emails);
+    setTimeout(getEmails, 500);
+
+    document.getElementById(`emaildata`).innerHTML = emails;
 
 };
 
-getEmails()
+getEmails();

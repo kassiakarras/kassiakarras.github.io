@@ -256,3 +256,11 @@ and (max-width: 768px){
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
+#signup {
+    max-height:40px;
+}
+
+#emailinput {
+    width: 85%;
+}
